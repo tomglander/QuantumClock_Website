@@ -239,7 +239,67 @@ footer{
 footer nav{display:flex;gap:24px}
 footer a:hover{color:var(--fg)}
 
+
+.hero-art{
+  position:relative;
+  min-height:100svh;
+  padding:82px 0 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.hero-art-frame{
+  width:min(1180px,100vw);
+  margin:0 auto;
+  position:relative;
+}
+.hero-art-frame img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 0 30px rgba(0,190,255,.08));
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-end;
+  text-align:center;
+  padding:0 22px 10vh;
+  pointer-events:none;
+}
+.hero-overlay .eyebrow{
+  margin-bottom:14px;
+  color:#8aa6b8;
+}
+.hero-overlay h1{
+  margin:0;
+  font-size:clamp(44px,9vw,112px);
+  line-height:.9;
+  letter-spacing:-.055em;
+  text-shadow:0 4px 30px rgba(0,0,0,.65);
+}
+.hero-overlay .tagline{
+  margin-top:18px;
+  color:#d8dde2;
+  text-shadow:0 3px 20px rgba(0,0,0,.8);
+}
+.hero-overlay .enter{
+  margin-top:28px;
+}
+
 @media(max-width:700px){
+  .hero-art{padding-top:72px;min-height:auto}
+  .hero-art-frame{width:100%}
+  .hero-overlay{padding:0 18px 7vh}
+  .hero-overlay h1{font-size:clamp(38px,13vw,62px)}
+  .hero-overlay .tagline{font-size:20px}
+
   .site-nav{padding:18px 20px}
   .nav-links{gap:13px;font-size:9px}
   .brand{font-size:10px}
@@ -266,11 +326,17 @@ footer a:hover{color:var(--fg)}
 
 <main>
 
-  <section class="hero">
-    <div class="eyebrow">Time, Reimagined</div>
-    <h1>QUANTUMCLOCK</h1>
-    <div class="tagline">A clock you don't read.<br>You experience it.</div>
-    <div class="enter">Enter the field ↓</div>
+  
+  <section class="hero hero-art">
+    <div class="hero-art-frame">
+      <img src="quantumclock-hero.png" alt="QuantumClock — Time, Reimagined">
+    </div>
+    <div class="hero-overlay">
+      <div class="eyebrow">Time, Reimagined</div>
+      <h1>QUANTUMCLOCK</h1>
+      <div class="tagline">A clock you don't read.<br>You experience it.</div>
+      <div class="enter">Enter the field ↓</div>
+    </div>
   </section>
 
   <section id="clock">
